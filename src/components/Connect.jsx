@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-
+import emailjs from '@emailjs/browser'
 const socials = [
   {
     label: 'GitHub',
@@ -46,6 +46,8 @@ const socials = [
 
 const Connect = () => {
   const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', message: '' });
+  const [status, setStatus] = useState(null); // { type: 'success' | 'error', text: string }
+  const [sending, setSending] = useState(false);
   const titleRef = useRef(null);
   const formRef = useRef(null);
   const socialRef = useRef(null);
@@ -70,12 +72,29 @@ const Connect = () => {
     e.preventDefault();
     const { firstName, lastName, email, message } = formData;
     if (!firstName || !lastName || !email || !message) {
-      alert('Please fill in all fields.');
+      setStatus({ type: 'error', text: 'Please fill in all fields.' });
       return;
     }
-    alert('Thanks, Asmit will get back to you soon! (demo)');
-    setFormData({ firstName: '', lastName: '', email: '', message: '' });
-  };
+    setSending(true);
+    setStatus(null);
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: `${firstName} ${lastName}`,
+        from_email: email,
+        message: message
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    ).then(() => {
+      setSending(false);
+      setStatus({ type: 'success', text: '✓ Message sent! I\'ll get back to you soon.' });
+      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    }).catch(() => {
+      setSending(false);
+      setStatus({ type: 'error', text: '✗ Failed to send. Please try again.' });
+    });
+  }
 
   return (
     <section id="connect">
@@ -132,9 +151,19 @@ const Connect = () => {
                 <label htmlFor="message">Message</label>
                 <textarea id="message" placeholder="Let's build something great together…" value={formData.message} onChange={handleChange} required></textarea>
               </div>
-              <button type="submit" className="btn" style={{ width: '100%' }}>
-                Send message
+              <button type="submit" className="btn" style={{ width: '100%' }} disabled={sending}>
+                {sending ? 'Sending…' : 'Send message'}
               </button>
+              {status && (
+                <p style={{
+                  marginTop: '12px',
+                  fontSize: '14px',
+                  textAlign: 'center',
+                  color: status.type === 'success' ? '#22c55e' : '#ef4444',
+                }}>
+                  {status.text}
+                </p>
+              )}
             </form>
           </div>
         </div>
