@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/portfolio.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -9,6 +9,10 @@ import Footer from './components/Footer';
 import BackgroundMesh from './components/BackgroundMesh';
 
 function App() {
+  const [isLight, setIsLight] = useState(false);
+  useEffect(() => {
+  document.body.classList.toggle('light-mode', isLight);
+}, [isLight]);
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -25,7 +29,12 @@ function App() {
   }, []);
 
   return (
+    
     <div className="App">
+      <button className="theme-toggle" onClick={() => setIsLight(!isLight)}>
+  {isLight ? 'Dark mode' : 'Light mode'}
+</button>
+
       <BackgroundMesh />
       <Navbar />
       <Hero />

@@ -53,6 +53,11 @@ const Footer = () => {
           ))}
         </div>
 
+        <button className="dark-mode">
+          Dark mode
+        </button>
+        
+
         <div className="footer-right">
           <a href="mailto:asmitpradhan321@gmail.com" className="footer-email">
             asmitpradhan321@gmail.com
