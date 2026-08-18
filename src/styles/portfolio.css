@@ -10,6 +10,10 @@
   --bg:           #0d0b14;
   --bg-section:   #130e22;
   --bg-card:      #1a1430;
+  --bg-hero:      #16112a;
+  --bg-contact:   #12101f;
+  --bg-navbar:    rgba(13, 11, 20, 0.85);
+  --bg-navbar-mobile: rgba(13, 11, 20, 0.95);
   --text:         #eeeef5;
   --text-muted:   #a8a8bb;
   --accent:       #6d5df0;
@@ -64,7 +68,7 @@ section:not(:first-of-type)::before {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(13, 11, 20, 0.8);
+  background: var(--bg-navbar);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
   padding: 14px 0;
@@ -168,7 +172,7 @@ section:not(:first-of-type)::before {
     align-items: center;
     padding: 28px 0;
     gap: 20px;
-    background: rgba(13, 11, 20, 0.95);
+    background: var(--bg-navbar-mobile);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     display: none;
@@ -193,18 +197,59 @@ section:not(:first-of-type)::before {
 }
 
 body.light-mode {
-  --bg: #f5f5f5;
-  --bg-section: #ebebeb;
-  --bg-card: #ffffff;
-  --text: #111111;
-  --text-muted: #555555;
-  --border: rgba(0, 0, 0, 0.08);
+  --bg:                #f0f0f5;
+  --bg-section:        #e8e8f0;
+  --bg-card:           #ffffff;
+  --bg-hero:           #e4e2f5;
+  --bg-contact:        #ececf5;
+  --bg-navbar:         rgba(240, 240, 245, 0.88);
+  --bg-navbar-mobile:  rgba(240, 240, 245, 0.98);
+  --text:              #111118;
+  --text-muted:        #55556a;
+  --border:            rgba(0, 0, 0, 0.08);
 }
 
 body.light-mode .theme-toggle {
   border-color: rgba(0, 0, 0, 0.2);
   background: rgba(0, 0, 0, 0.06);
   color: #111;
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #111;
+}
+
+body.light-mode .contact-form input::placeholder,
+body.light-mode .contact-form textarea::placeholder {
+  color: #888;
+}
+
+body.light-mode .nav-links a { color: #55556a; }
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active { color: #111; }
+
+/* headings — override gradient text to plain dark */
+body.light-mode .highlight {
+  background: linear-gradient(135deg, #4c3bc4, #6d5df0);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+body.light-mode .nav-logo,
+body.light-mode .footer-logo {
+  background: linear-gradient(135deg, #4c3bc4, #6d5df0);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+body.light-mode .section-title,
+body.light-mode .hero-content h1,
+body.light-mode .contact-heading,
+body.light-mode h1, body.light-mode h2, body.light-mode h3 {
+  color: #111118;
 }
 
 
@@ -214,7 +259,7 @@ body.light-mode .theme-toggle {
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: #16112a;
+  background: var(--bg-hero);
 }
 
 .hero-grid {
@@ -693,7 +738,7 @@ body.light-mode .theme-toggle {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 0;
-  background: #12101f;
+  background: var(--bg-contact);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.06);
   overflow: hidden;
