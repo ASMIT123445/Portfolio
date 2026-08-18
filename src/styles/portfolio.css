@@ -190,7 +190,7 @@ section:not(:first-of-type)::before {
 .hero-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
+  gap: 220px;
   align-items: center;
 }
 
@@ -231,7 +231,7 @@ section:not(:first-of-type)::before {
 
 @keyframes float {
   0%   { transform: translateY(0px); }
-  100% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
 }
 
 /* hero text — left side */

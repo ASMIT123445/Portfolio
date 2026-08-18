@@ -68,11 +68,11 @@ const Hero = () => {
       const rect = profileRef.current.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      profileRef.current.style.transform = `rotateY(${x * 12}deg) rotateX(${-y * 12}deg) translateY(-12px)`;
+      profileRef.current.style.transform = `rotateY(${x * 12}deg) rotateX(${-y * 12}deg)`;
     };
     const handleMouseLeave = () => {
       if (profileRef.current)
-        profileRef.current.style.transform = 'rotateY(0deg) rotateX(0deg) translateY(0px)';
+        profileRef.current.style.transform = 'rotateY(0deg) rotateX(0deg)';
     };
     const el = profileRef.current;
     if (el) {
