@@ -6,7 +6,6 @@ import Work from './components/Work';
 import TechStack from './components/TechStack';
 import Connect from './components/Connect';
 import Footer from './components/Footer';
-import CursorGlow from './components/CursorGlow';
 import BackgroundMesh from './components/BackgroundMesh';
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
   return (
     <div className="App">
       <BackgroundMesh />
-      <CursorGlow />
       <Navbar />
       <Hero />
       <Work />

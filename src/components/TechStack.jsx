@@ -3,32 +3,32 @@ import { useEffect, useRef } from 'react';
 const stacks = [
   {
     category: 'Frontend',
-    icon: '🖥️',
+    // icon: '🖥️',
     items: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Figma'],
   },
   {
     category: 'Backend',
-    icon: '⚙️',
-    items: ['Django', 'Django REST Framework', 'PHP', 'Python', 'JWT Auth'],
+    // icon: '⚙️',
+    items: ['Django', 'Django REST Framework', 'PHP', 'Python', 'Node', 'JWT Auth'],
   },
   {
     category: 'Database',
-    icon: '🗄️',
-    items: ['SQLite', 'MySQL', 'Django ORM'],
+    // icon: '🗄️',
+    items: ['SQLite', 'MySQL', 'Mongo', 'Django ORM'],
   },
   {
     category: 'Payments & APIs',
-    icon: '💳',
+    // icon: '💳',
     items: ['eSewa', 'Khalti', 'OpenWeather API'],
   },
   {
     category: 'Tools & Platforms',
-    icon: '🛠️',
+    // icon: '🛠️',
     items: ['Git', 'GitHub', 'Unity (C#)', 'VS Code', 'Postman'],
   },
   {
-    category: 'Concepts',
-    icon: '💡',
+    category: 'Other Concepts',
+    // icon: '💡',
     items: ['REST APIs', 'A* Pathfinding', 'Multi-agent AI', 'Clean Architecture', 'Responsive Design'],
   },
 ];
