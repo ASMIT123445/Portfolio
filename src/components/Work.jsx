@@ -1,12 +1,15 @@
 import { useEffect, useRef } from 'react';
 
-// When you add an image, import it here and use it in the projects array below
-// If the file doesn't exist yet, the import will fail — comment it out until ready
-// import ecomarket from '../assets/ecomarket.png';
+import ecomarket from '../assets/ecomarket.png';
+import deliverySimulation from '../assets/deliverySimulation.png';
+import weatherNow from '../assets/weatherNow.png';
+import bikeRental from '../assets/bikeRental.png';
+import langLearn from '../assets/langLearn.png';
+
 
 const projects = [
   {
-    image: null,   // replace null with: ecomarket  (after adding the import above)
+    image: ecomarket,   // replace null with: ecomarket  (after adding the import above)
     title: 'EcoMarket',
     subtitle: 'Full-stack e-commerce platform',
     description: 'Production-ready marketplace with Django REST & React, eSewa/Khalti payments, Green Points loyalty system, and JWT auth.',
@@ -14,7 +17,7 @@ const projects = [
     accent: '#22c55e',
   },
   {
-    image: null,
+    image: deliverySimulation,
     title: 'Delivery Simulation',
     subtitle: 'Unity AI multi-agent system',
     description: 'Multi-agent delivery simulation in Unity with A* pathfinding, dynamic collision avoidance, and a real-time UI dashboard.',
@@ -22,7 +25,7 @@ const projects = [
     accent: '#f59e0b',
   },
   {
-    image: null,
+    image: weatherNow,
     title: 'Weather Now',
     subtitle: 'Real-time weather dashboard',
     description: 'Weather app with PHP backend, MySQL search history, and OpenWeather API for live forecasts and location-based queries.',
@@ -30,7 +33,7 @@ const projects = [
     accent: '#38bdf8',
   },
   {
-    image: null,
+    image: bikeRental,
     title: 'Bike Rental System',
     subtitle: 'Django booking platform',
     description: 'Web app built with Django templates and ORM for managing bike bookings, availability scheduling, and customer records.',
@@ -38,7 +41,7 @@ const projects = [
     accent: '#fb923c',
   },
   {
-    image: null,
+    image: langLearn,
     title: 'LangLearn',
     subtitle: 'Figma UI/UX prototype',
     description: 'High-fidelity Figma prototype for a language learning app with auto-layout, interactive components, and full user flow.',
