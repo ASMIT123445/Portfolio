@@ -38,7 +38,7 @@ const Hero = () => {
   const [phraseIndex, setPhraseIndex] = useState(0);
   const profileRef = useRef(null);
 
-  const phrases = ['Full\u2011stack developer', 'React \u00b7 Django', 'Payment gateway integration', 'Eco\u2011conscious tech'];
+  const phrases = ['Full\u2011stack developer', 'Eco\u2011conscious tech'];
 
   useEffect(() => {
     const typewriter = () => {
