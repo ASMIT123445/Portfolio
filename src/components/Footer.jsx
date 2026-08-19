@@ -52,10 +52,6 @@ const Footer = () => {
             </a>
           ))}
         </div>
-
-        <button className="dark-mode">
-          Dark mode
-        </button>
         
 
         <div className="footer-right">

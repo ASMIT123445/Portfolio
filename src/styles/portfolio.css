@@ -40,13 +40,13 @@ body {
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 32px;
   position: relative;
   z-index: 2;
 }
 
 section {
-  padding: 100px 0 80px;
+  padding: 80px 0 60px;
   position: relative;
 }
 
@@ -60,7 +60,7 @@ section:not(:first-of-type)::before {
 }
 
 @media (max-width: 768px) {
-  .container { padding: 0 24px; }
+  .container { padding: 0 16px; }
 }
 
 /* ─── NAVBAR ────────────────────────────────────── */
@@ -527,7 +527,7 @@ body.light-mode h1, body.light-mode h2, body.light-mode h3 {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 15px;
 }
 
 @media (max-width: 1024px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -639,8 +639,8 @@ body.light-mode h1, body.light-mode h2, body.light-mode h3 {
   line-height: 1.6;
   margin-top: 4px;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
