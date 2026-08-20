@@ -5,11 +5,13 @@ import deliverySimulation from '../assets/deliverySimulation.png';
 import weatherNow from '../assets/weatherNow.png';
 import bikeRental from '../assets/bikeRental.png';
 import langLearn from '../assets/langLearn.png';
+import searchMovie from '../assets/searchMovie.png';
+
 
 
 const projects = [
   {
-    image: ecomarket,   // replace null with: ecomarket  (after adding the import above)
+    image: ecomarket,   
     title: 'EcoMarket',
     subtitle: 'Full-stack e-commerce platform',
     description: 'Production-ready marketplace with Django REST & React, eSewa/Khalti payments, Green Points loyalty system, and JWT auth.',
@@ -37,7 +39,7 @@ const projects = [
     title: 'Bike Rental System',
     subtitle: 'Django booking platform',
     description: 'Web app built with Django templates and ORM for managing bike bookings, availability scheduling, and customer records.',
-    tech: ['Django', 'HTML/CSS', 'Django ORM', 'SQLite'],
+    tech: ['Frontend', 'HTML/CSS', 'Teamwork', 'Simple JS', 'SQLite'],
     accent: '#fb923c',
   },
   {
@@ -48,6 +50,17 @@ const projects = [
     tech: ['Figma', 'Auto Layout', 'Prototyping', 'UI Design'],
     accent: '#a78bfa',
   },
+
+   {
+    image: searchMovie,
+    title: 'SearchMovie',
+    subtitle: 'Search moveies live',
+    description: 'Simple basic Frontend Website that allows user to search movies by the name and get sumple description along with the poster.',
+    tech: ['HTML', 'CSS', 'Javascript', 'API'],
+    accent: '#a78bfa',
+  },
+
+  
 ];
 
 const Work = () => {
